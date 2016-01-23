@@ -26,8 +26,9 @@
 }
 
 - (void)showClick{
-    Toast *toast = [Toast toastWithText:@"代颜网"];
-    [toast showInView:self.view showType:ToastShowCenter];
+//    Toast *toast = [Toast toastWithText:@"代颜网代颜网代颜网代颜网代颜网代颜];
+    Toast *toast = [Toast toastWithText:@"代颜网代颜网代颜网代颜网代颜网代颜" backgroundColor:[UIColor blueColor] alpha:0.3f];
+    [toast showInView:self.view showType:ToastShowTop];
     
 }
 

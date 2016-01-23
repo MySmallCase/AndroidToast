@@ -18,7 +18,7 @@ static CGFloat const kDefalultTextInset = 10.0;
 
 @implementation Toast
 
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor alpha:(CGFloat)alpha{
     self = [super initWithFrame:frame];
     if (self) {
         self.forwardAnimationDuration = kDefaultForwardAnimationDuration;
@@ -27,7 +27,7 @@ static CGFloat const kDefalultTextInset = 10.0;
         self.maxWidth = CGRectGetWidth([UIScreen mainScreen].bounds) - 20.0;
         self.layer.cornerRadius = 5.0;
         self.layer.masksToBounds = YES;
-        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+        self.backgroundColor = [backgroundColor colorWithAlphaComponent:alpha];
         self.numberOfLines = 0;
         self.textAlignment = NSTextAlignmentLeft;
         self.textColor = [UIColor whiteColor];
@@ -37,13 +37,13 @@ static CGFloat const kDefalultTextInset = 10.0;
 }
 
 
-+ (instancetype)toastWithText:(NSString *)text{
-    Toast *toast = [[Toast alloc] initToastWithText:text];
++ (instancetype)toastWithText:(NSString *)text backgroundColor:(UIColor *)backgroundColor alpha:(CGFloat)alpha{
+    Toast *toast = [[Toast alloc] initToastWithText:text backgroundColor:backgroundColor alpha:alpha];
     return toast;
 }
 
-- (instancetype)initToastWithText:(NSString *)text{
-    self = [self initWithFrame:CGRectZero];
+- (instancetype)initToastWithText:(NSString *)text backgroundColor:(UIColor *)backgroundColor alpha:(CGFloat)alpha{
+    self = [self initWithFrame:CGRectZero backgroundColor:backgroundColor alpha:alpha];
     if (self) {
         self.text = text;
         [self sizeToFit];

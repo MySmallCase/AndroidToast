@@ -26,11 +26,11 @@ typedef NS_ENUM(NSInteger, ToastShowType) {
 @property (nonatomic,assign) CGFloat maxWidth;
 
 
-+ (instancetype)toastWithText:(NSString *)text;
++ (instancetype)toastWithText:(NSString *)text backgroundColor:(UIColor *)backgroundColor alpha:(CGFloat)alpha;
 
-- (instancetype)initToastWithText:(NSString *)text;
+//- (instancetype)initToastWithText:(NSString *)text backgroundColor:(UIColor *)backgroundColor alpha:(CGFloat)alpha;
 
-- (void)showInView:(UIView *)view; //toast显示在哪个View上面
+//- (void)showInView:(UIView *)view; //toast显示在哪个View上面
 
 //Default is ToastShowBottom
 - (void)showInView:(UIView *)view showType:(ToastShowType)type;
